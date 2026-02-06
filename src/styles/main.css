@@ -1,0 +1,104 @@
+/* Main Global Styles */
+@import './theme.css';
+@import './layout.css';
+@import './components/buttons.css';
+@import './components/animations.css';
+/* Header/Footer */
+@import '../features/hero/hero.css';
+@import '../features/hero/phone.css';
+@import '../features/hero/typewriter.css';
+@import '../features/hero/highlights.css';
+@import '../features/about/about.css';
+@import '../features/services/services.css';
+@import '../features/skills/skills.css';
+@import '../features/experience/experience.css';
+@import '../features/education/education.css';
+@import '../features/projects/projects.css';
+@import '../features/contact/contact.css';
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color var(--transition-normal), color var(--transition-normal);
+    overflow-x: hidden;
+
+    /* Font Smoothing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+
+    /* Modern Grid Background Pattern */
+    background-image:
+        linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-fast);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Container Utility */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Sections */
+section {
+    padding: var(--spacing-3xl) 0;
+    position: relative;
+}
+
+.section-title {
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-gradient);
+    margin: var(--spacing-sm) auto 0;
+    border-radius: var(--radius-full);
+}

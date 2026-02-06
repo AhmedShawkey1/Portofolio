@@ -1,0 +1,123 @@
+/* Services Section */
+#services .section-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    left: auto;
+    transform: none;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 2.5rem 1.5rem;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(30, 41, 59, 0.8);
+    border-color: var(--card-color, rgba(255, 255, 255, 0.1));
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Dynamic Color Variables per card */
+.service-card.cyan {
+    --card-color: #22d3ee;
+}
+
+.service-card.violet {
+    --card-color: #8b5cf6;
+}
+
+.service-card.pink {
+    --card-color: #f472b6;
+}
+
+.service-card.blue {
+    --card-color: #3b82f6;
+}
+
+/* Icon Wrapper */
+.service-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.service-card:hover .service-icon-wrapper {
+    background: var(--card-color);
+    box-shadow: 0 0 30px var(--card-color);
+    transform: rotateY(180deg);
+}
+
+.service-icon {
+    color: var(--card-color);
+    transition: all 0.4s ease;
+}
+
+.service-card:hover .service-icon {
+    color: #0f172a;
+    /* Dark text on bright bg */
+    transform: rotateY(-180deg);
+    /* Counter rotate to keep icon facing forward if needed, or remove to spin */
+}
+
+.service-icon svg {
+    width: 34px;
+    height: 34px;
+}
+
+/* Typography */
+.service-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    transition: color 0.3s;
+}
+
+.service-card:hover .service-title {
+    color: var(--card-color);
+}
+
+.service-description {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* Glow Overlay */
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--card-color), transparent);
+    opacity: 0;
+    transition: opacity 0.4s;
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}

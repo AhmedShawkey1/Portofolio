@@ -1,0 +1,95 @@
+/* Highlighted Text Styles - Premium Glass Edition */
+.hero-description {
+    font-size: 1.25rem;
+    line-height: 1.9;
+    color: #cbd5e1;
+    /* Lighter, cleaner text */
+    max-width: 650px;
+    margin-top: 2rem;
+    position: relative;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    background: rgba(15, 23, 42, 0.4);
+    /* Dark translucent background */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-description:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient Left Border Accent */
+.hero-description::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #22d3ee, #8b5cf6, #f472b6);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+.highlight {
+    color: #fff;
+    font-weight: 600;
+    position: relative;
+    padding: 0 4px;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+/* Highlight Underline Glow */
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: currentColor;
+    opacity: 0.15;
+    z-index: -1;
+    transform: skewX(-10deg);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.highlight:hover::after {
+    height: 100%;
+    /* Fill up on hover */
+    opacity: 0.25;
+    bottom: 0;
+    transform: skewX(0);
+}
+
+/* Specific Colors & Glows */
+.text-blue {
+    color: #60a5fa;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
+}
+
+.text-cyan {
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+}
+
+.text-violet {
+    color: #a78bfa;
+    text-shadow: 0 0 10px rgba(167, 139, 250, 0.3);
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .hero-description {
+        padding: 1rem 1.25rem;
+        font-size: 1.1rem;
+        margin: 0 auto 2rem;
+    }
+}

@@ -1,0 +1,40 @@
+/* Scroll Animation Utilities */
+.section-hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add staggering to children if desired */
+.is-visible .container>* {
+    animation: slideUpFade 0.6s ease forwards;
+}
+
+.is-visible .container>*:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.is-visible .container>*:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.is-visible .container>*:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

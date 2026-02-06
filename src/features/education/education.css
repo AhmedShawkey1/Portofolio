@@ -1,0 +1,164 @@
+/* Education Section */
+#education .section-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    left: auto;
+    transform: none;
+    margin-bottom: 3rem;
+}
+
+.education-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.edu-card {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.highlight-card {
+    border: 2px solid transparent;
+    background: linear-gradient(var(--surface-color), var(--surface-color)) padding-box,
+        linear-gradient(45deg, var(--primary-color), var(--secondary-color)) border-box;
+    box-shadow: 0 10px 40px -10px rgba(59, 130, 246, 0.3);
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    z-index: 1;
+}
+
+.highlight-card::before {
+    background: var(--primary-gradient);
+    width: 6px;
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.highlight-card .edu-degree {
+    background: linear-gradient(120deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.highlight-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 20px 50px -15px rgba(59, 130, 246, 0.5);
+}
+
+.edu-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+/* Decorative 'Badge' line */
+.edu-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--secondary-gradient);
+    opacity: 0.8;
+}
+
+.edu-logo-wrapper {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: var(--radius-lg);
+    flex-shrink: 0;
+    padding: 5px;
+    border: 1px solid var(--border-color);
+}
+
+.edu-content {
+    flex-grow: 1;
+}
+
+.edu-degree {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.edu-year {
+    font-size: var(--font-size-sm);
+    color: var(--secondary-color);
+    font-weight: var(--font-weight-semibold);
+    background: rgba(16, 185, 129, 0.05);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+}
+
+.edu-school {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.edu-desc {
+    color: var(--text-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    max-width: 65ch;
+}
+
+/* Background watermark effect */
+.edu-card::after {
+    content: '🎓';
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+    font-size: 8rem;
+    opacity: 0.03;
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+@media (max-width: 768px) {
+    .edu-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

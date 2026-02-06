@@ -1,0 +1,12 @@
+{
+  "name": "my-clean-portfolio",
+  "version": "1.0.0",
+  "description": "Professional Portfolio with Clean Architecture",
+  "scripts": {
+    "start": "serve .",
+    "dev": "serve ."
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}

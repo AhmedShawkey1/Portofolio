@@ -1,0 +1,149 @@
+/* Experience Section */
+#experience .section-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+    left: auto;
+    transform: none;
+    margin-bottom: 3rem;
+}
+
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: var(--border-color);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -5px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    border: 2px solid var(--surface-color);
+    box-shadow: 0 0 0 2px var(--primary-light);
+    z-index: 2;
+}
+
+.timeline-content {
+    background: var(--surface-color);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Company Logo Styles */
+.company-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-md);
+    object-fit: contain;
+    /* OR cover depending on user pref, contain is safer for logos */
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 4px;
+    flex-shrink: 0;
+}
+
+.timeline-info {
+    flex-grow: 1;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: var(--font-size-sm);
+    color: var(--primary-color);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-xs);
+    background-color: rgba(37, 99, 235, 0.05);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+.timeline-role {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.timeline-company {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: var(--font-weight-medium);
+}
+
+.timeline-desc {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+    .timeline::before {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .timeline-item {
+        width: 50%;
+        padding-left: 0;
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .timeline-dot {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 24px;
+    }
+
+    .timeline-item:nth-child(odd) {
+        padding-right: var(--spacing-2xl);
+        text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+        margin-left: 50%;
+        padding-left: var(--spacing-2xl);
+    }
+
+    /* Reverse layout for odd items to keep image near text */
+    .timeline-item:nth-child(odd) .timeline-content {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+}
